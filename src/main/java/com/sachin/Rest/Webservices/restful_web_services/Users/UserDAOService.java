@@ -33,8 +33,25 @@ private static int usercount=0;
     public User findOne(int id){
 
         Predicate<? super User> predicate= user -> user.getId().equals(id);
-        return users.stream().filter(predicate).findFirst().get();
+        return users.stream().filter(predicate).findFirst().orElse(null);
     }
+
+    public User deleteById(int id){
+
+        Predicate<? super User> predicate= user -> user.getId().equals(id);
+        User u = users.stream().filter(predicate).findFirst().orElse(null);
+        users.removeIf(predicate);
+    
+        return u;
+
+
+    }
+
+
+
+
+
+
 
 }
 
