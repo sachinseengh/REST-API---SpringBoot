@@ -17,11 +17,13 @@ private static int usercount=0;
     static{
         users.add(new User(++usercount,"sachin", LocalDate.now().minusYears(30)));
         users.add(new User(++usercount,"kumar", LocalDate.now().minusYears(20)));
+
         users.add(new User(++usercount,"singh", LocalDate.now().minusYears(10)));
+        users.add(new User(++usercount,"kushwaha", LocalDate.now().minusYears(85)));
     }
 
     public List<User> findAll(){
-        return users;
+        return users;git
     }
 
     public User save(User user){
